@@ -702,3 +702,40 @@ height:450px;
     opacity:1;
     color:white;
 }
+
+/* ===== Developer Section ===== */
+
+.developer-section{
+    padding:80px 10%;
+    background:#eef4ec;
+    text-align:center;
+}
+
+.developer-section h2{
+    font-size:2.2rem;
+    color:#0f4c3a;
+    margin-bottom:35px;
+}
+
+.developer-card{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    border-top:6px solid #d4a017;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.developer-card p{
+    font-size:1.1rem;
+    margin:15px 0;
+    color:#333;
+}
+
+.developer-note{
+    margin-top:25px;
+    font-style:italic;
+    color:#0f4c3a;
+    font-weight:bold;
+}
