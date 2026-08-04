@@ -1,0 +1,704 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5ef;
+    color:#222;
+    overflow-x:hidden;
+}
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#143d2b;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    font-size:2rem;
+}
+
+.hero{
+    position:relative;
+    height:100vh;
+}
+
+.slideshow{
+    position:absolute;
+    inset:0;
+    background-image:url("images/elephant1.jpg");
+    background-size:cover;
+    background-position:center;
+    transition:background-image 1s ease-in-out;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.navbar{
+    position:fixed;
+    top:5px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 35px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border-radius:40px;
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    font-weight:bold;
+    font-size:1.3rem;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+.navbar a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.navbar a:hover{
+    color:#ffd34d;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:1.3rem;
+    max-width:700px;
+    line-height:1.6;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.primary{
+    background:#d4a017;
+    color:white;
+}
+
+.secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.scroll-indicator{
+    position:absolute;
+    bottom:30px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(10px);}
+}
+
+.section{
+    padding:90px 10%;
+}
+
+.alt{
+    background:#e8efe7;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+h2{
+    color:#1b4332;
+    text-align:center;
+    margin-bottom:20px;
+    font-size:2.5rem;
+}
+
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:60px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    font-size:2.5rem;
+    color:#2d6a4f;
+    margin-bottom:10px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.info-card{
+    background:white;
+    padding:30px;
+    border-left:6px solid #d4a017;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.info-card h3{
+    color:#1b4332;
+    margin-bottom:10px;
+}
+
+@media(max-width:900px){
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+    .navbar ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .hero-content h1{
+        font-size:2.6rem;
+    }
+    .buttons{
+        flex-direction:column;
+    }
+}
+
+/* ==============================
+   WHY ELEPHANTS MATTER
+============================== */
+
+.about-layout{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:80px;
+
+    margin-top:50px;
+
+}
+
+.about-image{
+
+    flex:1;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    height:650px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    transition:.4s;
+
+}
+
+.about-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.about-grid{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+.about-grid .info-card{
+
+    min-height:190px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.about-grid .info-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.about-grid h3{
+
+    margin-bottom:12px;
+
+    color:#1f5138;
+
+}
+
+.about-grid p{
+
+    line-height:1.6;
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.about-layout{
+
+flex-direction:column;
+
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.about-image img{
+
+height:450px;
+
+}
+
+}
+
+/* ==============================
+   DID YOU KNOW? SECTION
+============================== */
+
+.facts-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:50px;
+}
+
+.fact-card{
+    background:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+    border-top:6px solid #d4a017;
+    transition:.35s ease;
+    text-align:center;
+}
+
+.fact-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.fact-card h3{
+    color:#184d3b;
+    margin-bottom:15px;
+    font-size:1.35rem;
+}
+
+.fact-card p{
+    color:#444;
+    line-height:1.7;
+}
+
+@media(max-width:900px){
+
+.facts-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+/*==============================
+        DONATE SECTION
+==============================*/
+
+.intro{
+    max-width:900px;
+    margin:20px auto 60px;
+    text-align:center;
+    font-size:1.15rem;
+    line-height:1.8;
+    color:#444;
+}
+
+.donate-layout{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px;
+}
+
+.donate-image{
+    flex:1;
+}
+
+.donate-image img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+    border-radius:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+    transition:.4s;
+}
+
+.donate-image img:hover{
+    transform:scale(1.02);
+}
+
+.donate-cards{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.donate-card{
+    background:white;
+    padding:28px;
+    border-left:6px solid #d4a017;
+    border-radius:18px;
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+    transition:.35s ease;
+}
+
+.donate-card:hover{
+    transform:translateX(8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.donate-card h3{
+    color:#184d3b;
+    margin-bottom:12px;
+    font-size:1.45rem;
+}
+
+.donate-card p{
+    color:#444;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.donate-card a{
+    display:inline-block;
+    padding:12px 24px;
+    background:#184d3b;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.donate-card a:hover{
+    background:#d4a017;
+    color:#184d3b;
+}
+
+@media(max-width:900px){
+
+.donate-layout{
+    flex-direction:column;
+}
+
+.donate-image img{
+    height:500px;
+}
+
+}
+
+/*==============================
+      QUESTIONNAIRE SECTION
+==============================*/
+
+.question-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:50px;
+}
+
+.question-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+    border-top:6px solid #d4a017;
+    transition:.35s;
+}
+
+.question-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.question-card h3{
+    color:#184d3b;
+    margin-bottom:20px;
+    font-size:1.3rem;
+}
+
+.question-card label{
+    display:block;
+    margin:12px 0;
+    cursor:pointer;
+    color:#444;
+    font-size:1.05rem;
+}
+
+.question-card input[type="text"],
+.question-card textarea,
+.question-card select{
+
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    font-size:1rem;
+    transition:.3s;
+    font-family:inherit;
+
+}
+
+.question-card input[type="text"]:focus,
+.question-card textarea:focus,
+.question-card select:focus{
+
+    border-color:#184d3b;
+    outline:none;
+
+}
+
+.question-card textarea{
+
+    height:120px;
+    resize:none;
+
+}
+
+.question-card input[type="radio"],
+.question-card input[type="checkbox"]{
+
+    margin-right:10px;
+
+}
+
+.submit-area{
+
+     grid-column:1 / -1;
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    margin-top:60px;
+}
+
+.submit-area button{
+
+    display:block;
+    margin:0 auto;
+
+
+    padding:16px 40px;
+    border:none;
+    border-radius:35px;
+    background:#184d3b;
+    color:white;
+    font-size:1.1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.submit-area button:hover{
+
+    background:#d4a017;
+    color:#184d3b;
+    transform:translateY(-3px);
+
+}
+
+#thankYouMessage{
+
+    margin-top:30px;
+    font-size:1.15rem;
+    color:#184d3b;
+    font-weight:600;
+    opacity:0;
+    transition:.4s;
+
+}
+
+@media(max-width:900px){
+
+.question-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+/*==============================
+        CONCLUSION
+==============================*/
+
+.ending{
+
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),
+    rgba(0,0,0,.45)),
+    url("images/sections/ending.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.ending-overlay{
+
+    max-width:850px;
+    color:white;
+    padding:40px;
+
+}
+
+.ending h2{
+
+    font-size:3.5rem;
+    margin-bottom:30px;
+    color:white;
+    text-shadow:0 3px 15px rgba(0,0,0,.45);
+
+}
+
+.ending p{
+
+    font-size:1.3rem;
+    line-height:1.8;
+    margin-bottom:30px;
+
+}
+
+.ending h3{
+
+    font-size:2rem;
+    margin-bottom:20px;
+    color:white;
+    text-shadow:0 3px 15px rgba(0,0,0,.45);
+
+
+}
+
+.ending-small{
+
+    font-size:1.3rem;
+    line-height:1.8;
+    opacity:1;
+    color:white;
+}
